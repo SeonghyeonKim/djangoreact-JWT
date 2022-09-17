@@ -18,7 +18,6 @@ const Navbar = () => {
           ) : (
             <>
               <Link to="/login">로그인</Link>
-              <br>
               <Link to="/register">회원가입</Link>
             </>
           )}

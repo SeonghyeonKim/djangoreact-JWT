@@ -16,11 +16,9 @@ const LoginPage = () => {
       <form onSubmit={handleSubmit}>
         <h1>Login </h1>
         <hr />
-        <br>
         <label htmlFor="username">PNU webmail</label>
         <input type="text" id="username" placeholder="Enter Username" />
         <label></label>
-        <br>
         <label htmlFor="password">비밀번호</label>
         <input type="password" id="password" placeholder="Enter Password" />
         <button type="submit">Login</button>
