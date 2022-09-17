@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import useAxios from "../utils/useAxios";
 
+//미로그인시에는 보이지 않음
+//**GET 성공적으로 이루어졌는지 메시지 송출
 function ProtectedPage() {
   const [res, setRes] = useState("");
   const api = useAxios();

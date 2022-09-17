@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
 import AuthContext from "../context/AuthContext";
 
+
+//학과 탭 추가해주세요 major
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +20,7 @@ function Register() {
         <h1>Register</h1>
         <hr />
         <div>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">부산대 이메일</label>
           <input
             type="text"
             id="username"
@@ -28,7 +30,7 @@ function Register() {
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">비밀번호</label>
           <input
             type="password"
             id="password"
@@ -38,7 +40,7 @@ function Register() {
           />
         </div>
         <div>
-          <label htmlFor="confirm-password">Confirm Password</label>
+          <label htmlFor="confirm-password">비밀번호 확인</label>
           <input
             type="password"
             id="confirm-password"
@@ -46,9 +48,9 @@ function Register() {
             placeholder="Confirm Password"
             required
           />
-          <p>{passwordcheck !== password ? "Passwords do not match" : ""}</p>
+          <p>{passwordcheck !== password ? "비밀번호가 일치하지 않습니다." : ""}</p>
         </div>
-        <button>Register</button>
+        <button>계정 생성하기</button>
       </form>
     </section>
   );

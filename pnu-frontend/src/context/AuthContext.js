@@ -41,7 +41,7 @@ export const AuthProvider =({ children }) => {
       localStorage.setItem("authTokens", JSON.stringify(data));
       history.push("/");
     } else {
-      alert("응답코드가 200이 아닙니다. 로컬에 토큰 저장이 불가합니다.");
+      alert("응답코드가 200이 아닙니다. 토큰 저장이 불가합니다.");
     }
   };
 
@@ -61,7 +61,7 @@ export const AuthProvider =({ children }) => {
     if (response.status === 201) {
       history.push("/login");
     } else {
-      alert("응답코드가 200이 아닙니다. login 페이지로의 전환이 불가합니다.");
+      alert("비밀번호 재확인 부탁드립니다. code201");
     }
   };
 

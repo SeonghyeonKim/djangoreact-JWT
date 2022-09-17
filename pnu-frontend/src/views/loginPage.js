@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 
+//**로그인 화면
 const LoginPage = () => {
   const { loginUser } = useContext(AuthContext);
   const handleSubmit = e => {
@@ -15,9 +16,12 @@ const LoginPage = () => {
       <form onSubmit={handleSubmit}>
         <h1>Login </h1>
         <hr />
-        <label htmlFor="username">Username</label>
+        <br>
+        <label htmlFor="username">PNU webmail</label>
         <input type="text" id="username" placeholder="Enter Username" />
-        <label htmlFor="password">Password</label>
+        <label></label>
+        <br>
+        <label htmlFor="password">비밀번호</label>
         <input type="password" id="password" placeholder="Enter Password" />
         <button type="submit">Login</button>
       </form>

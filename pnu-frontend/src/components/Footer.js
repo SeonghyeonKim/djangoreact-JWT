@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
       <div>
-        <h4>Created By You</h4>
+        <h4>PNUstu :Customized notification service </h4>
       </div>
     );
   };

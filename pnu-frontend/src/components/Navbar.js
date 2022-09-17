@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav>
       <div>
-        <h1>App Name</h1>
+        <h1>PNU stu</h1>
         <div>
           {user ? (
             <>
@@ -17,8 +17,9 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login">Login</Link>
-              <Link to="/register">Register</Link>
+              <Link to="/login">로그인</Link>
+              <br>
+              <Link to="/register">회원가입</Link>
             </>
           )}
         </div>
