@@ -16,3 +16,33 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['email'] = user.email
         # ...
         return token
+
+
+class RegisterSerializer(serializers.ModelSerializer):
+    # 비밀번호
+    password = serializers.CharField(
+        write_only=True, required=True, validators=[validate_password])
+    # 비밀번호 확인
+    passwordcheck = serializers.CharField(write_only=True, required=True)
+
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'passwordcheck')
+
+    # 비밀번호 같은지 확인
+    def validate(self, attrs):
+        if attrs['password'] != attrs['passwordcheck']:
+            raise serializers.ValidationError(
+                {"password": "일치하지 않습니다."})
+
+        return attrs
+
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username']
+        )
+
+        user.set_password(validated_data['password'])
+        user.save()
+
+        return user
