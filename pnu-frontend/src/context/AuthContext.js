@@ -37,13 +37,14 @@ export const AuthProvider =({ children }) => {
 
     if (response.status === 200) {
       setAuthTokens(data);
-      setUser(jwt_decode(data.access));
+      setUser(jwt_decode(data.access))s;
       localStorage.setItem("authTokens", JSON.stringify(data));
       history.push("/");
     } else {
       alert("응답코드가 200이 아닙니다. 토큰 저장이 불가합니다.");
     }
-  };
+  }
+
 
   // 가입시에 username 과 pw, pwcheck 입력시 응답이 성공적으로 이루어지면 login 페이지로 리다이렉트
   const registerUser = async (username, password, passwordcheck) => {

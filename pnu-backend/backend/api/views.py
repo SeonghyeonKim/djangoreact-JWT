@@ -28,6 +28,7 @@ def getRoutes(request):
     ]
     return Response(routes)
 
+# 클라이언트가 malformed content을 보낼시에 400 Bad Request
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 

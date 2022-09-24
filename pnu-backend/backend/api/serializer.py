@@ -18,16 +18,22 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         return token
 
 
+# Model Serializer
 class RegisterSerializer(serializers.ModelSerializer):
+    # 유저 이름 (부산대 이메일 아이디)
+    username = serializers.CharField(max_length=100)
     # 비밀번호
     password = serializers.CharField(
         write_only=True, required=True, validators=[validate_password])
     # 비밀번호 확인
     passwordcheck = serializers.CharField(write_only=True, required=True)
+    # 학과
+    major = serializers.CharField(write_only=True, required=False)
+
 
     class Meta:
         model = User
-        fields = ('username', 'password', 'passwordcheck')
+        fields = ('username', 'password', 'passwordcheck','major')
 
     # 비밀번호 같은지 확인
     def validate(self, attrs):
@@ -39,7 +45,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = User.objects.create(
-            username=validated_data['username']
+            username=validated_data['username'],
         )
 
         user.set_password(validated_data['password'])
