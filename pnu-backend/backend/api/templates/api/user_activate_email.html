@@ -1,0 +1,4 @@
+{% autoescape off %}
+아래의 URL을 통해 인증해주세요.
+http://{{ domain }}{% url 'api:activate' uidb64=uid token=token %}
+{% endautoescape %}
